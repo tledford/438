@@ -7,6 +7,8 @@ public class testing {
 		// guys. this method is overly complicated.
 		System.out.println("Hello World!!");
 		
+		//Tommy's test
+		System.out.println("Tommy knows!!");
 		
 	}
 }
