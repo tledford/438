@@ -8,7 +8,7 @@ public class gitTesting {
 		// I don't know
 		
 <<<<<<< HEAD
-		//Jake commit
+		//Jake com      mit
 		System.out.println("Yay!!!")
 =======
 		HeLLoWorLd();		// can someone help me make this thing easier to read,
