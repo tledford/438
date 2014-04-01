@@ -1,0 +1,12 @@
+Change log:
+
+v1.0
+Initial changes build
+- @string/app_name changed from "ODK Collect" to "ODK SmrtClkr"
+- @string/default_server_url changed from "https://opendatakit.appspot.com" to "https://smrtclkr.appspot.com"
+- android:versionName changed from v1.4 to v1.0
+- added: <uses-feature android:name="android.hardware.bluetooth" android:required="false"/> to the AndroidManifest.xml
+- added: <uses-permission android:name="android.permission.BLUETOOTH"/> to the AndroidManifest.xml
+- android:versionCode changed from 1038 to 1
+- @+id/autosend_wifi defaultValue changed from false to true
+- @+id/autosend_network defaultValue changed from false to true
