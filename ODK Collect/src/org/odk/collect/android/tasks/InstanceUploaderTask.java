@@ -12,8 +12,10 @@
  * the License.
  */
 
-//NEED TO FIGURE OUT HOW THIS WORKS!!!!!!!!!!!
-//-ERNEST
+
+
+/*/NEED TO FIGURE OUT HOW THIS WORKS!!!!!!!!!!!
+-ERNEST*/
 
 package org.odk.collect.android.tasks;
 
