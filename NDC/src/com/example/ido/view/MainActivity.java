@@ -40,6 +40,8 @@ import android.widget.ListView;
 public class MainActivity extends Activity {
 		
 	private ListView mainListView;
+	
+	//comment from Dayala
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
