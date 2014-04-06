@@ -35,7 +35,7 @@ import android.widget.Toast;
 
 public class ViewAllGroupsActivity extends GeneralActivity {
 	
-	// VARIABLES DEFINED HERE
+	// VARIABLES DEFINED HERE//stuff
 	int count = 0;
 	// The cursor for query all groups from database
 	private Cursor allGroupsCursor;
