@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.io.IOException;
 
 import com.example.ido.R;
 import com.example.ido.R.id;
