@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.IOException;
 
 import com.example.ido.R;
 import com.example.ido.R.id;
@@ -19,6 +20,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -104,33 +106,71 @@ public class ViewAllGroupsActivity extends GeneralActivity {
 		}
 		
 		void fileWriter(String instance){
-			//Log.d("Elias", "entered filewriter");
+			//Log.d("Tommy", "entered filewriter");
+			
+			SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+			Date date = new Date();
+			String dateFormatted = DATE_FORMAT.format(date);
+			
+			//make the filename legal!
+			dateFormatted = dateFormatted.replace(" ","_");
+			dateFormatted = dateFormatted.replace(":", "-");
+			String root = Environment.getExternalStorageDirectory().toString();
+			try {
+			    File newFolder = new File(root + "/odk/instances/form_" + dateFormatted);
+			    if (!newFolder.exists()) {
+			        newFolder.mkdir();
+			    }
+			    try {
+			    	
+			    	String fileName = "form_" + dateFormatted + ".xml";
+			    	Log.d("Tommy", fileName);
+			        File file = new File(newFolder, fileName);
+			        
+					if(file.exists())
+					{
+						file.delete();
+					}
+					
+			        file.createNewFile();
+			     
+			        FileOutputStream out = new FileOutputStream(file);
+					out.write(instance.getBytes());
+					out.close();
+					//Log.d("Tommy","Succes: " + getFilesDir());
+			    } catch (Exception ex) {
+			    	Log.d("Tommy", "ex: " + ex);
+			    }
+			} catch (Exception e) {
+				Log.d("Tommy","e: " + e);
+			}
 		
 				
-				SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyy-mm-dd hh:mm:ss");
-				Date date = new Date();
-				String dateFormatted = DATE_FORMAT.format(date);
-				String root = Environment.getExternalStorageDirectory().toString();
-				File fileDir = new File(root + "/odk/instances");
-				fileDir.mkdirs();
-				String fileName = "form" + dateFormatted + ".xml";
-				File file = new File(fileDir,fileName);
 				
-				if(file.exists())
-				{
-					file.delete();
-				}
-				try
-				{
-					FileOutputStream out = new FileOutputStream(file);
-					out.write(instance.getBytes());
-					//Log.d("Miguel","Succes: " + getFilesDir());
-					out.close();
-				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-				}
+//				File fileDir = new File(root + "/odk/instances");
+//				fileDir.mkdirs();
+//				Log.d("Tommy", fileDir.getPath());
+//				String fileName = "form_" + dateFormatted + ".xml";
+//				File file = new File(fileDir,fileName);
+//				//file.createNewFile();
+//				Log.d("Tommy", file.getPath());
+//				Log.d("Tommy", instance);
+				
+//				if(file.exists())
+//				{
+//					file.delete();
+//				}
+//				try
+//				{
+//					FileOutputStream out = new FileOutputStream(file);
+//					out.write(instance.getBytes());
+//					//Log.d("Miguel","Succes: " + getFilesDir());
+//					out.close();
+//				}
+//				catch(Exception e)
+//				{
+//					e.printStackTrace();
+//				}
 
 		}
 		
@@ -139,7 +179,7 @@ public class ViewAllGroupsActivity extends GeneralActivity {
 			
 
 			//xml instance template;
-			//Log.d("Elias",Environment.getExternalStorageDirectory().getAbsolutePath());
+			Log.d("Tommy",Environment.getExternalStorageDirectory().getAbsolutePath());
 
 			String xmlTest="<?xml version='1.0' ?><testform1 id='testform1'><formhub><uuid>1d01462f8b4446caa6431cdcbd7849ba</uuid></formhub><correct_behavior>%s</correct_behavior><end>2014-03-15T10:00:14.671-07</end><meta><instanceID>uuid:02e0e664-5198-437e-a231-88fb300dc62a</instanceID></meta></testform1>";
 			

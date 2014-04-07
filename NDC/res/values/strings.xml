@@ -23,7 +23,7 @@
 
     <string name="namu">Elliot Ramiro</string>
     <string name="tasku">Sort 5 blocks. Was the task completed successfully?</string>
-    <string name="activity_main_Listview_main_option_Item_show_all_groups_String_title">Open Form</string>
+    <string name="activity_main_Listview_main_option_Item_show_all_groups_String_title">Click To Open Form</string>
     <string name="activity_view_all_groups_String_title">NIDC</string>
     <string name="activity_view_all_groups_Menu_actionbar_Item_add_String_title">Add</string>
     <string name="activity_view_all_groups_Menu_actionbar_Item_manage_String_title">Manage</string>
