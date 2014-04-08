@@ -74,6 +74,7 @@ public class MainMenuActivity extends Activity {
 	private static final int MENU_ADMIN = Menu.FIRST + 1;
 
 	// buttons
+	private Button mStartClicksCaptureButton;
 	private Button mEnterDataButton;
 	private Button mManageFilesButton;
 	private Button mSendDataButton;
@@ -147,6 +148,21 @@ public class MainMenuActivity extends Activity {
 		mAdminPreferences = this.getSharedPreferences(
 				AdminPreferencesActivity.ADMIN_PREFERENCES, 0);
 
+		// start clicks capture button. expects a result.
+		mStartClicksCaptureButton = (Button) findViewById(R.id.start_clicks_capture);
+		mStartClicksCaptureButton.setText(getString(R.string.start_clicks_capture_button));
+		mStartClicksCaptureButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), "CHARMANEEEEEEEEEE!", Toast.LENGTH_SHORT).show();
+				Collect.getInstance().getActivityLogger()
+				.logAction(this, "startClicksCapture", "click");
+				Intent i = new Intent(getApplicationContext(),
+						StartClicksCapture.class);
+				startActivity(i);
+			}
+		});
+
 		// enter data button. expects a result.
 		mEnterDataButton = (Button) findViewById(R.id.enter_data);
 		mEnterDataButton.setText(getString(R.string.enter_data_button));
@@ -154,7 +170,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "fillBlankForm", "click");
+				.logAction(this, "fillBlankForm", "click");
 				Intent i = new Intent(getApplicationContext(),
 						FormChooserList.class);
 				startActivity(i);
@@ -168,7 +184,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "editSavedForm", "click");
+				.logAction(this, "editSavedForm", "click");
 				Intent i = new Intent(getApplicationContext(),
 						InstanceChooserList.class);
 				startActivity(i);
@@ -182,7 +198,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "uploadForms", "click");
+				.logAction(this, "uploadForms", "click");
 				Intent i = new Intent(getApplicationContext(),
 						InstanceUploaderList.class);
 				startActivity(i);
@@ -196,7 +212,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "downloadBlankForms", "click");
+				.logAction(this, "downloadBlankForms", "click");
 				Intent i = new Intent(getApplicationContext(),
 						FormDownloadList.class);
 				startActivity(i);
@@ -211,7 +227,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "deleteSavedForms", "click");
+				.logAction(this, "deleteSavedForms", "click");
 				Intent i = new Intent(getApplicationContext(),
 						FileManagerTabs.class);
 				startActivity(i);
@@ -310,17 +326,17 @@ public class MainMenuActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		Collect.getInstance().getActivityLogger()
-				.logAction(this, "onCreateOptionsMenu", "show");
+		.logAction(this, "onCreateOptionsMenu", "show");
 		super.onCreateOptionsMenu(menu);
 
 		CompatibilityUtils.setShowAsAction(
-    		menu.add(0, MENU_PREFERENCES, 0, R.string.general_preferences)
+				menu.add(0, MENU_PREFERENCES, 0, R.string.general_preferences)
 				.setIcon(R.drawable.ic_menu_preferences),
-			MenuItem.SHOW_AS_ACTION_NEVER);
+				MenuItem.SHOW_AS_ACTION_NEVER);
 		CompatibilityUtils.setShowAsAction(
-    		menu.add(0, MENU_ADMIN, 0, R.string.admin_preferences)
+				menu.add(0, MENU_ADMIN, 0, R.string.admin_preferences)
 				.setIcon(R.drawable.ic_menu_login),
-			MenuItem.SHOW_AS_ACTION_NEVER);
+				MenuItem.SHOW_AS_ACTION_NEVER);
 		return true;
 	}
 
@@ -329,15 +345,15 @@ public class MainMenuActivity extends Activity {
 		switch (item.getItemId()) {
 		case MENU_PREFERENCES:
 			Collect.getInstance()
-					.getActivityLogger()
-					.logAction(this, "onOptionsItemSelected",
-							"MENU_PREFERENCES");
+			.getActivityLogger()
+			.logAction(this, "onOptionsItemSelected",
+					"MENU_PREFERENCES");
 			Intent ig = new Intent(this, PreferencesActivity.class);
 			startActivity(ig);
 			return true;
 		case MENU_ADMIN:
 			Collect.getInstance().getActivityLogger()
-					.logAction(this, "onOptionsItemSelected", "MENU_ADMIN");
+			.logAction(this, "onOptionsItemSelected", "MENU_ADMIN");
 			String pw = mAdminPreferences.getString(
 					AdminPreferencesActivity.KEY_ADMIN_PW, "");
 			if ("".equalsIgnoreCase(pw)) {
@@ -347,7 +363,7 @@ public class MainMenuActivity extends Activity {
 			} else {
 				showDialog(PASSWORD_DIALOG);
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "createAdminPasswordDialog", "show");
+				.logAction(this, "createAdminPasswordDialog", "show");
 			}
 			return true;
 		}
@@ -356,7 +372,7 @@ public class MainMenuActivity extends Activity {
 
 	private void createErrorDialog(String errorMsg, final boolean shouldExit) {
 		Collect.getInstance().getActivityLogger()
-				.logAction(this, "createErrorDialog", "show");
+		.logAction(this, "createErrorDialog", "show");
 		mAlertDialog = new AlertDialog.Builder(this).create();
 		mAlertDialog.setIcon(android.R.drawable.ic_dialog_info);
 		mAlertDialog.setMessage(errorMsg);
@@ -366,9 +382,9 @@ public class MainMenuActivity extends Activity {
 				switch (i) {
 				case DialogInterface.BUTTON_POSITIVE:
 					Collect.getInstance()
-							.getActivityLogger()
-							.logAction(this, "createErrorDialog",
-									shouldExit ? "exitApplication" : "OK");
+					.getActivityLogger()
+					.logAction(this, "createErrorDialog",
+							shouldExit ? "exitApplication" : "OK");
 					if (shouldExit) {
 						finish();
 					}
@@ -399,43 +415,43 @@ public class MainMenuActivity extends Activity {
 			passwordDialog.setButton(AlertDialog.BUTTON_POSITIVE,
 					getString(R.string.ok),
 					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-							String value = input.getText().toString();
-							String pw = mAdminPreferences.getString(
-									AdminPreferencesActivity.KEY_ADMIN_PW, "");
-							if (pw.compareTo(value) == 0) {
-								Intent i = new Intent(getApplicationContext(),
-										AdminPreferencesActivity.class);
-								startActivity(i);
-								input.setText("");
-								passwordDialog.dismiss();
-							} else {
-								Toast.makeText(
-										MainMenuActivity.this,
-										getString(R.string.admin_password_incorrect),
-										Toast.LENGTH_SHORT).show();
-								Collect.getInstance()
-										.getActivityLogger()
-										.logAction(this, "adminPasswordDialog",
-												"PASSWORD_INCORRECT");
-							}
-						}
-					});
+				public void onClick(DialogInterface dialog,
+						int whichButton) {
+					String value = input.getText().toString();
+					String pw = mAdminPreferences.getString(
+							AdminPreferencesActivity.KEY_ADMIN_PW, "");
+					if (pw.compareTo(value) == 0) {
+						Intent i = new Intent(getApplicationContext(),
+								AdminPreferencesActivity.class);
+						startActivity(i);
+						input.setText("");
+						passwordDialog.dismiss();
+					} else {
+						Toast.makeText(
+								MainMenuActivity.this,
+								getString(R.string.admin_password_incorrect),
+								Toast.LENGTH_SHORT).show();
+						Collect.getInstance()
+						.getActivityLogger()
+						.logAction(this, "adminPasswordDialog",
+								"PASSWORD_INCORRECT");
+					}
+				}
+			});
 
 			passwordDialog.setButton(AlertDialog.BUTTON_NEGATIVE,
 					getString(R.string.cancel),
 					new DialogInterface.OnClickListener() {
 
-						public void onClick(DialogInterface dialog, int which) {
-							Collect.getInstance()
-									.getActivityLogger()
-									.logAction(this, "adminPasswordDialog",
-											"cancel");
-							input.setText("");
-							return;
-						}
-					});
+				public void onClick(DialogInterface dialog, int which) {
+					Collect.getInstance()
+					.getActivityLogger()
+					.logAction(this, "adminPasswordDialog",
+							"cancel");
+					input.setText("");
+					return;
+				}
+			});
 
 			passwordDialog.getWindow().setSoftInputMode(
 					WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
