@@ -9,9 +9,15 @@ package com.example.ido;
 
 public final class R {
     public static final class array {
+        /**  Main menu button names go here 
+         */
         public static final int activity_main_Listview_main_option_Stringarray_values=0x7f080000;
-        public static final int activity_modify_task_Spinner_completion_status_Stringarray_values=0x7f080003;
-        public static final int activity_modify_task_Spinner_priority_level_Stringarray_values=0x7f080002;
+        /**  String array to auto fill student name and current task
+    	 this method is not dynamic and was only meant as placeholders.
+    	 To properly implement this feature would require for the user
+    	 to load the XML form into the app and have a function
+    	 that auto-fills each task as they're answered. 
+         */
         public static final int activity_view_all_groups_arr=0x7f080001;
     }
     public static final class attr {
@@ -44,8 +50,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class id {
         public static final int activity_main_Listview_main_option=0x7f0b0000;
         public static final int activity_view_all_groups_listview_all_groups_layout_textview_group_title=0x7f0b0001;
-        public static final int button1=0x7f0b0002;
-        public static final int listViewer=0x7f0b0003;
+        public static final int button1=0x7f0b0003;
+        public static final int listViewer=0x7f0b0004;
+        public static final int relativeLayout=0x7f0b0002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -60,61 +67,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int yes=0x7f040001;
     }
     public static final class string {
-        public static final int False_Radio=0x7f07002f;
-        public static final int Truth_Radio=0x7f07002e;
-        public static final int action_settings=0x7f070001;
-        public static final int activity_main_Listview_main_option_Item_show_all_groups_String_title=0x7f070004;
-        public static final int activity_modify_group_Edittext_group_title_String_hint=0x7f070010;
-        public static final int activity_modify_group_Menu_actionbar_Item_cancel_String_title=0x7f07000f;
-        public static final int activity_modify_group_Menu_actionbar_Item_save_String_title=0x7f07000e;
-        public static final int activity_modify_group_String_title=0x7f07000c;
-        public static final int activity_modify_group_Textview_group_title_String_title=0x7f07000d;
-        public static final int activity_modify_task_Button_clear_collaborator_String_title=0x7f070027;
-        public static final int activity_modify_task_Button_select_collaborator_String_title=0x7f070026;
-        public static final int activity_modify_task_Dialog_confirm_cancel_Button_negative_String_title=0x7f070024;
-        public static final int activity_modify_task_Dialog_confirm_cancel_Button_positive_String_title=0x7f070023;
-        public static final int activity_modify_task_Dialog_confirm_cancel_TextView_label_String_title=0x7f070025;
-        public static final int activity_modify_task_EditText_note_String_hint=0x7f070017;
-        public static final int activity_modify_task_EditText_task_title_String_hint=0x7f070014;
-        public static final int activity_modify_task_Menu_actionbar_Item_cancel_String_title=0x7f070022;
-        public static final int activity_modify_task_Menu_actionbar_Item_save_String_title=0x7f070021;
-        public static final int activity_modify_task_Spinner_completion_status_Item_no_String_title=0x7f070020;
-        public static final int activity_modify_task_Spinner_completion_status_Item_yes_String_title=0x7f07001f;
-        public static final int activity_modify_task_Spinner_priority_level_Item_high_String_title=0x7f070019;
-        public static final int activity_modify_task_Spinner_priority_level_Item_low_String_title=0x7f07001b;
-        public static final int activity_modify_task_Spinner_priority_level_Item_medium_String_title=0x7f07001a;
-        public static final int activity_modify_task_String_title=0x7f070012;
-        public static final int activity_modify_task_TextView_collaborators_String_title=0x7f07001c;
-        public static final int activity_modify_task_TextView_completion_status_String_title=0x7f07001e;
-        public static final int activity_modify_task_TextView_due_date_String_title=0x7f070015;
-        public static final int activity_modify_task_TextView_group_String_title=0x7f07001d;
-        public static final int activity_modify_task_TextView_note_String_title=0x7f070016;
-        public static final int activity_modify_task_TextView_task_title_String_title=0x7f070013;
-        public static final int activity_modify_task_Textview_priority_level_String_title=0x7f070018;
-        public static final int activity_setting_Checkbox_notification_String_title=0x7f07002b;
-        public static final int activity_view_Group_tasks_String_title=0x7f070009;
-        public static final int activity_view_all_groups_Menu_actionbar_Item_add_String_title=0x7f070006;
-        public static final int activity_view_all_groups_Menu_actionbar_Item_manage_String_title=0x7f070007;
-        public static final int activity_view_all_groups_String_title=0x7f070005;
-        public static final int activity_view_all_tasks_Menu_actionbar_Item_add_String_title=0x7f07000a;
-        public static final int activity_view_all_tasks_Menu_actionbar_Item_manage_String_title=0x7f07000b;
-        public static final int activity_view_all_tasks_String_title=0x7f070008;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_add_String_title=0x7f07002a;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_delete_String_title=0x7f070029;
-        public static final int activity_view_task_detail_Menu_actionbar_Item_edit_String_title=0x7f070028;
-        public static final int activity_view_task_detail_String_title=0x7f070011;
+        public static final int False_Radio=0x7f070007;
+        public static final int Truth_Radio=0x7f070006;
+        public static final int activity_main_Listview_main_option_Item_show_all_groups_String_title=0x7f070003;
+        public static final int activity_view_all_groups_String_title=0x7f070004;
         public static final int app_name=0x7f070000;
-        public static final int namu=0x7f070002;
-        public static final int tasku=0x7f070003;
-        public static final int title_activity_setting=0x7f07002c;
-        public static final int title_activity_view_all_groups=0x7f07002d;
+        public static final int currentTask=0x7f070002;
+        /**  Strings for the app go here 
+         */
+        public static final int studentName=0x7f070001;
+        public static final int title_activity_view_all_groups=0x7f070005;
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
@@ -131,15 +96,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090000;
+        public static final int AppBaseTheme=0x7f090001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090001;
+        public static final int AppTheme=0x7f090002;
         public static final int ButtonBar=0x7f090003;
         public static final int ButtonBarButton=0x7f090004;
         public static final int FullscreenActionBarStyle=0x7f090005;
-        public static final int FullscreenTheme=0x7f090002;
+        /** 
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+         */
+        public static final int FullscreenTheme=0x7f090000;
     }
     public static final class styleable {
         /** 
