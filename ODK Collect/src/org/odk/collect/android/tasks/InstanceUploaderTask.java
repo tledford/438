@@ -94,6 +94,16 @@ public class InstanceUploaderTask extends AsyncTask<Long, Integer, InstanceUploa
      */
     private boolean uploadOneSubmission(String urlString, String id, String instanceFilePath,
     			Uri toUpdate, HttpContext localContext, Map<Uri, Uri> uriRemap, Outcome outcome) {
+    	
+    	Log.d("Team: ", "urlString: " + urlString);
+    	Log.d("Team: ", "id: " + id);
+    	Log.d("Team: ", "instanceFilePath: " + instanceFilePath);
+    	Log.d("Team: ", "toUpdate: " + toUpdate);
+    	Log.d("Team: ", "localContext: " + localContext);
+    	Log.d("Team: ", "Map<Uri : " + Map<Uri);
+    	Log.d("Team: ", "uriRemap: " + uriRemap);
+    	Log.d("Team: ", "outcome: " + outcome);
+    	
 
     	Collect.getInstance().getActivityLogger().logAction(this, urlString, instanceFilePath);
 
