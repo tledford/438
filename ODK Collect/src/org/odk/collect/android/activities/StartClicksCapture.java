@@ -120,6 +120,7 @@ public class StartClicksCapture extends Activity{
 						out.close();
 						//Log.d("Tommy","Succes: " + getFilesDir());
 				    } catch (Exception ex) {
+				    	
 				    	Log.d("Tommy", "ex: " + ex);
 				    }
 				} catch (Exception e) {
@@ -162,17 +163,17 @@ public class StartClicksCapture extends Activity{
 				//xml instance template;
 				Log.d("Tommy",Environment.getExternalStorageDirectory().getAbsolutePath());
 
-				String xmlTest="<?xml version='1.0' ?><testform1 id='testform1'><formhub><uuid>1d01462f8b4446caa6431cdcbd7849ba</uuid></formhub><correct_behavior>%s</correct_behavior><end>2014-03-15T10:00:14.671-07</end><meta><instanceID>uuid:02e0e664-5198-437e-a231-88fb300dc62a</instanceID></meta></testform1>";
+				String xmlTest="<?xml version='1.0' ?><testform1 id='testform1'><formhub><uuid>1d01462f8b4446caa6431cdcbd7849ba</uuid></formhub><correct_behavior>" + input + "</correct_behavior><end>2014-03-15T10:00:14.671-07</end><meta><instanceID>uuid:02e0e664-5198-437e-a231-88fb300dc62a</instanceID></meta></testform1>";
 				
-				String something;
-				if(input == 1){
-					 something = String.format(xmlTest, "1");
-				}
-				else{
-					//this is for a "no" response, will insert 2 in the form.
-					 something = String.format(xmlTest, "2");
-				}
-				fileWriter(something);
+//				String something;
+//				if(input == 1){
+//					 something = String.format(xmlTest, "1");
+//				}
+//				else{
+//					//this is for a "no" response, will insert 2 in the form.
+//					 something = String.format(xmlTest, "2");
+//				}
+				fileWriter(xmlTest);
 				
 			}
 

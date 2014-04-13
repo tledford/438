@@ -100,7 +100,10 @@ public class InstanceUploaderTask extends AsyncTask<Long, Integer, InstanceUploa
     	Log.d("Team: ", "instanceFilePath: " + instanceFilePath);
     	Log.d("Team: ", "toUpdate: " + toUpdate);
     	Log.d("Team: ", "localContext: " + localContext);
+<<<<<<< HEAD
     	//Log.d("Team: ", "Map<Uri : " + Map<Uri);
+=======
+>>>>>>> refs/remotes/origin/bluetooth
     	Log.d("Team: ", "uriRemap: " + uriRemap);
     	Log.d("Team: ", "outcome: " + outcome);
     	
