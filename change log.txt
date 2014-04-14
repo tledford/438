@@ -10,3 +10,7 @@ Initial changes build
 - android:versionCode changed from 1038 to 1
 - @+id/autosend_wifi defaultValue changed from false to true
 - @+id/autosend_network defaultValue changed from false to true
+
+v1.1 Added auto-upload feature
+- android:versionName changed from v1.0 to v1.1
+- Added auto-upload functionality to StartClicksCapture.java
