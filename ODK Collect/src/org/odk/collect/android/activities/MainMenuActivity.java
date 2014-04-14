@@ -154,7 +154,7 @@ public class MainMenuActivity extends Activity {
 		mStartClicksCaptureButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "CHARMANEEEEEEEEEE!", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(), "CHARMANEEEEEEEEEE!", Toast.LENGTH_SHORT).show();
 				Collect.getInstance().getActivityLogger()
 				.logAction(this, "startClicksCapture", "click");
 				Intent i = new Intent(getApplicationContext(),

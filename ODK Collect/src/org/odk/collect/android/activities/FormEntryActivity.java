@@ -1644,7 +1644,7 @@ public class FormEntryActivity extends Activity implements AnimationListener,
 					Toast.LENGTH_SHORT).show();
 			return false;
 		}
-
+		Log.d("Team: ", "intent data: "+ getIntent().getData());
 		mSaveToDiskTask = new SaveToDiskTask(getIntent().getData(), exit,
 				complete, updatedSaveName);
 		mSaveToDiskTask.setFormSavedListener(this);
