@@ -7,7 +7,6 @@ import java.util.Date;
 
 import org.odk.collect.android.R;
 import org.odk.collect.android.utilities.WebUtils;
-
 import org.opendatakit.httpclientandroidlib.HttpResponse;
 import org.opendatakit.httpclientandroidlib.client.HttpClient;
 import org.opendatakit.httpclientandroidlib.client.methods.HttpPost;
@@ -19,6 +18,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 import android.net.Uri;
@@ -38,8 +38,13 @@ public class StartClicksCapture extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_groups);
+		
+		// keeps app on top of lock screen and allows user to touch the screen for input
+		// to the app as soon as it's awake enough to receive user input.
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TOUCHABLE_WHEN_WAKING);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);	
+		
 		setupMessageButton();
-
 	};
 
 	private void setupMessageButton(){
@@ -67,7 +72,8 @@ public class StartClicksCapture extends Activity {
 				};
 				if(count == 1)
 				{
-					handler.postDelayed(r, 250);
+					// raised delay to allow for more time for second click to be received from user.
+					handler.postDelayed(r, 500); 
 				}
 				else if (count == 2)
 				{
