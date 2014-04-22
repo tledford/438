@@ -158,7 +158,7 @@ public class MainMenuActivity extends Activity {
 				Collect.getInstance().getActivityLogger()
 				.logAction(this, "startClicksCapture", "click");
 				Intent i = new Intent(getApplicationContext(),
-						StartClicksCapture.class);
+						ClicksFormChooser.class);
 				startActivity(i);
 			}
 		});
