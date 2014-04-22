@@ -26,6 +26,8 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 
 public class StartClicksCapture extends Activity {
+	
+	String xmlTest;
 
 	String dateFormatted, end;
 
@@ -177,8 +179,9 @@ public class StartClicksCapture extends Activity {
 	{	
 		getCurrTime();
 
-		String xmlTest="<?xml version='1.0' ?><Behavior_Form id='Behavior_Form'><correct_behavior>" + input + "</correct_behavior><end>" + end + "</end></Behavior_Form>";
+		xmlTest="<?xml version='1.0' ?><Behavior_Form id='Behavior_Form'><correct_behavior>" + input + "</correct_behavior><end>" + end + "</end></Behavior_Form>";
 
+		
 		fileWriter(xmlTest);
 	}
 
