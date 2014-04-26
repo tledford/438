@@ -303,9 +303,17 @@ public class DiskSyncTask extends AsyncTask<Void, String, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        if (mListener != null) {
-            mListener.SyncComplete(result);
+        
+        try{
+        	if (mListener != null) {
+                mListener.SyncComplete(result);
+            }
         }
+        catch(Exception e)
+        {
+        	Log.d("test:", result);
+        }
+        
     }
 
 }
