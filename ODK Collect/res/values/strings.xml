@@ -32,9 +32,10 @@
 <string name="cancel_location">Cancel</string>
 <string name="cancel_saving_form">Cancel</string>
 <string name="cannot_edit_completed_form">This form cannot be edited once it has been marked as complete. It may be encrypted.</string>
-<string name="capture_audio">Record Sound</string><string-array name="activity_view_all_groups_arr">
-        <item >@string/studentName</item>
-        <item >@string/currentTask</item>
+<string name="capture_audio">Record Sound</string>
+<string-array name="clickable_forms_array">
+        <item >@string/form1</item>
+        <item >@string/form2</item>
     </string-array>
 <string name="capture_image">Take Picture</string>
 <string name="capture_video">Record Video</string>
@@ -234,7 +235,13 @@
 <string name="found_in_menu">Uncheck to hide from menu in Form Entry</string>
 <string name="autosend">Auto Send</string><string-array name="activity_main_Listview_main_option_Stringarray_values">
         <item>@string/activity_main_Listview_main_option_Item_show_all_groups_String_title</item>
-    </string-array><string name="studentName">Elliot Ramiro</string><string name="currentTask">Sort 5 blocks. Was the task completed successfully?</string><string name="activity_main_Listview_main_option_Item_show_all_groups_String_title">Open Form</string><string name="activity_view_all_groups_String_title">NIDC</string><string name="title_activity_view_all_groups">ViewAllGroupsActivity</string><string name="Truth_Radio">Yes</string><string name="False_Radio">No</string>
+    </string-array>
+    <string name="form1">1 Click 2 Click</string>
+    <string name="form2">Left Click Blue Click</string>
+    <string name="activity_main_Listview_main_option_Item_show_all_groups_String_title">Open Form</string>
+    <string name="activity_view_all_groups_String_title">NIDC</string>
+    <string name="title_activity_view_all_groups">ViewAllGroupsActivity</string>
+    <string name="Truth_Radio">Yes</string><string name="False_Radio">No</string>
 <string name="autosend_wifi">Auto send with Wi-Fi</string>
 <string name="autosend_wifi_summary">Auto send when Wi-Fi is available</string>
 <string name="autosend_network">Auto send with network</string>
@@ -260,6 +267,7 @@
 <string name="constraint_behavior_on_swipe">Validate upon forward swipe</string>
 <string name="constraint_behavior_on_finalize">Defer validation until finalized</string>
 <string name="view_change_location">View or Change Location</string>
-<string name="start_clicks_capture">Start Clicks Capture</string>
-<string name="start_clicks_capture_button">Start Clicks Capture</string>
+<string name="clicks_form_list">Choose Clickable Form</string>
+<string name="clicks_form_chooser_button">Choose Clicker Form</string>
+<string name="no_clickable_forms">Nothing available to display.</string>
 </resources>

@@ -74,7 +74,7 @@ public class MainMenuActivity extends Activity {
 	private static final int MENU_ADMIN = Menu.FIRST + 1;
 
 	// buttons
-	private Button mStartClicksCaptureButton;
+	private Button mClicksFormCHooserButton;
 	private Button mEnterDataButton;
 	private Button mManageFilesButton;
 	private Button mSendDataButton;
@@ -149,14 +149,13 @@ public class MainMenuActivity extends Activity {
 				AdminPreferencesActivity.ADMIN_PREFERENCES, 0);
 
 		// start clicks capture button. expects a result.
-		mStartClicksCaptureButton = (Button) findViewById(R.id.start_clicks_capture);
-		mStartClicksCaptureButton.setText(getString(R.string.start_clicks_capture_button));
-		mStartClicksCaptureButton.setOnClickListener(new OnClickListener() {
+		mClicksFormCHooserButton = (Button) findViewById(R.id.clicks_form_chooser);
+		mClicksFormCHooserButton.setText(getString(R.string.clicks_form_chooser_button));
+		mClicksFormCHooserButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//Toast.makeText(getApplicationContext(), "CHARMANEEEEEEEEEE!", Toast.LENGTH_SHORT).show();
 				Collect.getInstance().getActivityLogger()
-				.logAction(this, "startClicksCapture", "click");
+				.logAction(this, "clicksFromChooser", "click");
 				Intent i = new Intent(getApplicationContext(),
 						ClicksFormChooser.class);
 				startActivity(i);
